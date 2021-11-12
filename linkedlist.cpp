@@ -32,6 +32,7 @@ public:
             tail = tail->next;
         }
     };
+
     void view()
     {
         nodeStruct *tempNode;
@@ -42,4 +43,28 @@ public:
             tempNode = tempNode->next;
         }
     };
+
+    void remove(int value)
+    {
+        cout << "remove\n";
+        nodeStruct *tempNode;
+        nodeStruct *prevNode;
+        tempNode = head;
+        if (head == NULL)
+        {
+            cout << "List is empty";
+        }
+        else
+        {
+            do
+            {
+                if (tempNode->value == value)
+                {
+                    prevNode->next = tempNode->next;
+                }
+                prevNode = tempNode;
+                tempNode = tempNode->next;
+            } while (tempNode != NULL);
+        }
+    }
 };
